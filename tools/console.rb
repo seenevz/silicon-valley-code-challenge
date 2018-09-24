@@ -21,11 +21,12 @@ fr1 = FundingRound.new(s1, v1, "Series A", 100)
 fr2 = FundingRound.new(s1, v4, "Seed", 50)
 fr3 = FundingRound.new(s3, v2, "Seed", 50)
 fr4 = FundingRound.new(s3, v4, "Seed", 100)
-fr5 = FundingRound.new(s4, v1, "Seed", 100)
+fr5 = FundingRound.new(s4, v1, "Seed", 150)
 fr6 = FundingRound.new(s4, v2, "Series A", 100)
 fr7 = FundingRound.new(s4, v3, "Series B", 100)
-fr8 = FundingRound.new(s4, v4, "Series C", 100)
-
+fr8 = FundingRound.new(s4, v4, "Series C", 200)
+fr9 = FundingRound.new(s4, v4, "Seed", 100)
+fr10 = FundingRound.new(s2, v2, "Seed", 250)
 
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line

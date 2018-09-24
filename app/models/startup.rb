@@ -31,4 +31,40 @@ class Startup
   def pivot(domain)
     @domain = domain
   end
+
+  def sign_contract(venture_capitalist, type, investment)
+    FundingRound.new(self, venture_capitalist, type, investment)
+  end
+
+  def num_funding_rounds
+    funding_rounds.length
+  end
+
+  def total_funds
+    investments = funding_rounds.map do |funding_round|
+      funding_round.investment
+    end
+    investments.reduce(:+)
+  end
+
+  def investors
+    venture_capitalists = funding_rounds.map do |funding_round|
+      funding_round.venture_capitalist
+    end
+    venture_capitalists.uniq
+  end
+
+  def big_investors
+    investors.select do |investor|
+      investor.tres_commas
+    end
+  end
+
+  private
+
+  def funding_rounds
+    FundingRound.all.select do |funding_round|
+      funding_round.startup == self
+    end
+  end
 end
